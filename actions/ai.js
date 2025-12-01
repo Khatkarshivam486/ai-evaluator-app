@@ -15,7 +15,7 @@ const ai = new GoogleGenAI(process.env.GEMINI_API_KEY);
  * @param {string} taskDescription - The description provided by the user.
  * @param {string} codeSnippet - The actual code snippet.
  */
-async function runAIEvaluation(taskId, taskTitle, taskDescription, codeSnippet) {
+export async function runAIEvaluation(taskId, taskTitle, taskDescription, codeSnippet) {
     const supabase = createClient();
     
     // Define the AI Prompt (requesting strict JSON format)
