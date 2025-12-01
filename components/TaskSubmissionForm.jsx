@@ -66,5 +66,3 @@ export default function TaskSubmissionForm({ userId }) {
     </form>
   );
 }
-
-// ... (rest of the component) ...
