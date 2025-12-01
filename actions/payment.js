@@ -16,8 +16,8 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
  */
 export async function createCheckoutSession(taskId) {
     // 1. Define the item the user is paying for
-    // 🛑 IMPORTANT: You MUST replace 'price_XXX' with a real Price ID from your Stripe Dashboard.
-    const priceId = 'price_XXX'; 
+    // 🛑 IMPORTANT: You MUST replace 'price_1SZXfZHOtRvVzFX5sBLp7aKY' with a real Price ID from your Stripe Dashboard.
+    const priceId = 'price_1SZXfZHOtRvVzFX5sBLp7aKY'; 
 
     try {
         const session = await stripe.checkout.sessions.create({
