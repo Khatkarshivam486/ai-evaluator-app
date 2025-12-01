@@ -1,17 +1,15 @@
-// /app/login/page.js
-import { redirect } from 'next/navigation';
-import { cookies } from 'next/headers';
-import { createClient } from '@/lib/supabase/server'; 
-import { signIn, signUp } from '@/actions/auth'; // 👈 THE FIX IS HERE
+// /app/login/page.js (FINAL, Simplified Version)
+import { signIn, signUp } from '@/actions/auth'; // Import the fixed Server Actions
 
 export default function LoginPage({ searchParams }) {
-  // NO signIn or signUp FUNCTIONS ARE DEFINED HERE ANYMORE.
+  // Check if the user is redirected to a success page or an error page
+  const message = searchParams?.message;
 
   return (
     <div style={{ maxWidth: '400px', margin: '50px auto', padding: '20px', border: '1px solid #ccc' }}>
       <h1>Sign In / Sign Up</h1>
       {/* Display messages like errors or confirmation texts */}
-      {searchParams?.message && <p style={{ color: searchParams.message.includes('confirm') ? 'green' : 'red' }}>{searchParams.message}</p>}
+      {message && <p style={{ color: message.includes('confirm') ? 'green' : 'red' }}>{message}</p>}
       
       {/* Sign In Form: Uses the imported signIn Server Action */}
       <form action={signIn} style={{ marginBottom: '30px' }}>
