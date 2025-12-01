@@ -1,7 +1,6 @@
-// /actions/ai.js (Full Code for Insertion and AI Call)
+// /actions/ai.js 
 'use server';
 
-// NOTE: You must run 'npm install @google/genai' in your terminal
 import { GoogleGenAI } from '@google/genai';
 import { createClient } from '@/lib/supabase/server'; // Secure Server Client
 

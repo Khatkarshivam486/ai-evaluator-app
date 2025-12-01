@@ -1,11 +1,12 @@
-// /app/login/page.js (UPDATED CODE)
+// /app/login/page.js
 import { redirect } from 'next/navigation';
-// NOTE: Import the Server Actions from the new file
-import { signIn, signUp } from '@/actions/auth'; 
+import { cookies } from 'next/headers';
+import { createClient } from '@/lib/supabase/server'; // Import the secure Server Client
+import { signIn, signUp } from '@/actions/auth'; // 👈 IMPORT THE FUNCTIONS HERE
 
 export default function LoginPage({ searchParams }) {
-  // signIn and signUp functions are REMOVED from here.
-  
+  // No server actions are defined inside this component anymore!
+
   return (
     <div style={{ maxWidth: '400px', margin: '50px auto', padding: '20px', border: '1px solid #ccc' }}>
       <h1>Sign In / Sign Up</h1>
